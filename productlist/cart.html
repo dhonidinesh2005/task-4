@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cart - Unique Treasures</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>Your Cart</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="payment.html">Proceed to Payment</a>
+    </nav>
+  </header>
+  <main>
+    <div id="cart-items"></div>
+    <h2 id="total"></h2>
+  </main>
+
+  <script>
+    let cart = [
+      { id: 1, name: "Product A", price: 499, quantity: 1 },
+      { id: 2, name: "Product B", price: 699, quantity: 2 }
+    ];
+  
+    function renderCart() {
+      const cartItemsContainer = document.getElementById("cart-items");
+      const cartTotalElement = document.getElementById("cart-total");
+      cartItemsContainer.innerHTML = "";
+  
+      let total = 0;
+  
+      cart.forEach((item, index) => {
+        total += item.price * item.quantity;
+  
+        const itemDiv = document.createElement("div");
+        itemDiv.className = "cart-item";
+  
+        itemDiv.innerHTML = `
+          <span>${item.name}</span>
+          <div>
+            ₹ <span>${item.price}</span>
+            <input type="number" min="1" class="quantity-input" value="${item.quantity}" data-index="${index}">
+            <button class="remove-btn" data-index="${index}">Remove</button>
+          </div>
+        `;
+  
+        cartItemsContainer.appendChild(itemDiv);
+      });
+  
+      cartTotalElement.textContent = `Total: ₹${total}`;
+    }
+  
+    // Handle quantity change and removal
+    document.addEventListener("input", function (e) {
+      if (e.target.classList.contains("quantity-input")) {
+        const index = parseInt(e.target.dataset.index);
+        const newQty = parseInt(e.target.value);
+        if (newQty > 0) {
+          cart[index].quantity = newQty;
+          renderCart();
+        }
+      }
+    });
+  
+    document.addEventListener("click", function (e) {
+      if (e.target.classList.contains("remove-btn")) {
+        const index = parseInt(e.target.dataset.index);
+        cart.splice(index, 1);
+        renderCart();
+      }
+    });
+  
+    // Initial render
+    document.addEventListener("DOMContentLoaded", renderCart);
+  </script>
+  
+</body>
+</html>

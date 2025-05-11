@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Payment - Unique Treasures</title>
+  <link rel="stylesheet" href="sheet.css">
+</head>
+<body>
+ 
+
+  <div id="content">
+    <header>
+      <h1>Payment Gateway</h1>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="cart.html">Back to Cart</a>
+      </nav>
+    </header>
+    <main>
+      <form id="payment-form">
+        <h2>Enter Payment Details</h2>
+        <label for="payment-method">Choose Payment Method:</label>
+        <select id="payment-method" required>
+          <option value="card">Credit/Debit Card</option>
+          <option value="upi">UPI ID</option>
+          <option value="cod">Cash on Delivery</option>
+        </select>
+        <div id="card-payment">
+          <label>Card Number:<br><input type="text" required></label><br>
+          <label>Name on Card:<br><input type="text" required></label><br>
+          <label>Expiry Date:<br><input type="month" required></label><br>
+          <label>CVV:<br><input type="password" required></label><br>
+        </div>
+        <div id="upi-payment" style="display:none;">
+          <label>UPI ID:<br><input type="text" required placeholder="yourname@upi"></label><br>
+        </div>
+        <div id="cod-payment" style="display:none;">
+          <p>Cash on Delivery option selected. Please pay in cash when your order is delivered.</p>
+        </div>
+
+        <button type="button" onclick="handlePayment()">Pay Now</button>
+      </form>
+      
+      <h3 id="confirmation"></h3>
+    </main>
+  </div>
+
+  <script>
+    // Function to handle payment option visibility
+    document.getElementById('payment-method').addEventListener('change', function() {
+      const paymentMethod = this.value;
+      document.getElementById('card-payment').style.display = paymentMethod === 'card' ? 'block' : 'none';
+      document.getElementById('upi-payment').style.display = paymentMethod === 'upi' ? 'block' : 'none';
+      document.getElementById('cod-payment').style.display = paymentMethod === 'cod' ? 'block' : 'none';
+    });
+
+    // Initial state when page loads
+    window.onload = function() {
+      document.getElementById('payment-method').dispatchEvent(new Event('change'));
+    };
+
+    // Handle payment form submission
+    function handlePayment() {
+      const paymentMethod = document.getElementById('payment-method').value;
+      let confirmationMessage = '';
+
+      // Check which payment method is selected and generate appropriate message
+      switch(paymentMethod) {
+        case 'card':
+          confirmationMessage = 'Payment successful with Credit/Debit Card! Thank you for shopping with us.';
+          break;
+        case 'upi':
+          confirmationMessage = 'Payment successful via UPI ID! Thank you for shopping with us.';
+          break;
+        case 'cod':
+          confirmationMessage = 'Your order will be delivered soon. Pay in cash upon delivery. Thank you for shopping with us.';
+          break;
+      }
+
+      // Display confirmation message
+      document.getElementById('confirmation').innerText = confirmationMessage;
+      localStorage.removeItem('cart');
+
+      // Disable the form and button after payment
+      document.getElementById('payment-form').reset();
+      document.querySelector('button').disabled = true;
+      document.querySelector('button').innerText = "Payment Completed";
+
+      // Redirect to homepage after 3 seconds
+      setTimeout(function() {
+        window.location.href = "index.html"; // Change to your homepage path
+      }, 3000);
+    }
+  </script>
+</body>
+</html>

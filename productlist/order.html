@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Order - Unique Treasures</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+    }
+
+    header {
+      background-color: #333;
+      color: white;
+      padding: 10px 0;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+    }
+
+    nav {
+      margin-top: 10px;
+    }
+
+    .nav-button {
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px 20px;
+      margin: 5px;
+      text-decoration: none;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .nav-button:hover {
+      background-color: #45a049;
+    }
+
+    .order {
+      padding: 20px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    section {
+      margin-bottom: 20px;
+    }
+
+    h2, h3 {
+      color: #333;
+    }
+
+    ul {
+      list-style-type: none;
+      padding-left: 0;
+    }
+
+    ul li {
+      margin: 5px 0;
+    }
+
+    button {
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px 15px;
+      margin-top: 10px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Unique Treasures - Order</h1>
+    <nav>
+      <a href="index.html" class="nav-button">Home</a>
+      <a href="cart.html" class="nav-button">Cart</a>
+      <a href="payment.html" class="nav-button">Checkout</a>
+      <button class="nav-button" onclick="window.location.href='help.html'">Help Center</button>
+    </nav>
+  </header>
+
+  <main class="order">
+    <h2>Order Details</h2>
+    <section>
+      <h3>Order #12345</h3>
+      <p><strong>Placed on:</strong> May 11, 2025</p>
+      <p><strong>Status:</strong> Shipped</p>
+      <p><strong>Shipping Address:</strong> 123 Main Street, Mumbai, India</p>
+      <p><strong>Total:</strong> ₹2499</p>
+    </section>
+
+    <section>
+      <h3>Items in Order</h3>
+      <ul>
+        <li>Handcrafted Clay Mug - ₹499</li>
+        <li>Eco-Friendly Jute Bag - ₹299</li>
+        <li>Pure Copper Water Bottle - ₹899</li>
+      </ul>
+    </section>
+
+    <section>
+      <h3>Track Your Order</h3>
+      <p>Track the status of your order below:</p>
+      <button onclick="alert('Tracking feature coming soon!')">Track Order</button>
+    </section>
+
+    <section>
+      <h3>Customer Support</h3>
+      <p>Need help? Email <strong>support@uniquetreasures.com</strong>.</p>
+    </section>
+  </main>
+</body>
+</html>

@@ -1,0 +1,86 @@
+/* General Body and Layout Styling */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+}
+
+/* Header Styling */
+header {
+  background-color: #333;
+  color: white;
+  padding: 10px 0;
+  text-align: center;
+}
+
+header h1 {
+  margin: 0;
+}
+
+nav {
+  margin-top: 10px;
+}
+
+/* Styling for Navigation Links and Buttons */
+.nav-button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  margin: 5px;
+  text-decoration: none;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.nav-button:hover {
+  background-color: #45a049;
+}
+
+.nav-button:focus {
+  outline: none;
+}
+
+/* Product Grid Styling */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+.product {
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 15px;
+  text-align: center;
+}
+
+.product img {
+  width: 100%;
+  border-radius: 5px;
+}
+
+.product h2 {
+  margin: 10px 0;
+}
+
+.product p {
+  margin: 5px 0;
+}
+
+.product button {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  margin: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.product button:hover {
+  background-color: #45a049;
+}

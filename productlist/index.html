@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Unique Webshop - Home</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Unique Treasures</h1>
+    <nav>
+      <a href="cart.html">Cart</a>
+      <a href="payment.html">Checkout</a>
+      <a href="help.html">Help Center</a>
+      <a href="order.html">Order</a>
+    </nav>
+  </header>
+
+  <main class="product-grid">
+    <div class="product">
+      <img src="https://via.placeholder.com/300?text=Clay+Mug" alt="Clay Mug">
+      <h2>Handcrafted Clay Mug</h2>
+      <p>A beautifully handcrafted clay mug made by local artisans. Perfect for coffee lovers who appreciate traditional craftsmanship and rustic charm.</p>
+      <p><strong>Price:</strong> ₹499</p>
+      <button onclick="viewProduct('Handcrafted Clay Mug')">View</button>
+      <button onclick="addToCart('Handcrafted Clay Mug', 499)">Add to Cart</button>
+    </div>
+
+    <div class="product">
+      <img src="https://via.placeholder.com/300?text=Jute+Bag" alt="Jute Bag">
+      <h2>Eco-Friendly Jute Bag</h2>
+      <p>Made from natural fibers, this jute bag is a sustainable alternative for everyday use. Durable, stylish, and good for the environment.</p>
+      <p><strong>Price:</strong> ₹299</p>
+      <button onclick="viewProduct('Eco-Friendly Jute Bag')">View</button>
+      <button onclick="addToCart('Eco-Friendly Jute Bag', 299)">Add to Cart</button>
+    </div>
+
+    <div class="product">
+      <img src="https://via.placeholder.com/300?text=Copper+Bottle" alt="Copper Bottle">
+      <h2>Pure Copper Water Bottle</h2>
+      <p>This handcrafted copper bottle enhances your health while keeping water cool. A blend of tradition, wellness, and design.</p>
+      <p><strong>Price:</strong> ₹899</p>
+      <button onclick="viewProduct('Pure Copper Water Bottle')">View</button>
+      <button onclick="addToCart('Pure Copper Water Bottle', 899)">Add to Cart</button>
+    </div>
+
+    <div class="product">
+      <img src="https://via.placeholder.com/300?text=Terracotta+Lamp" alt="Terracotta Lamp">
+      <h2>Terracotta Table Lamp</h2>
+      <p>A rustic table lamp made from terracotta clay, adding a warm earthy feel to your home décor. Hand-painted for uniqueness.</p>
+      <p><strong>Price:</strong> ₹1299</p>
+      <button onclick="viewProduct('Terracotta Table Lamp')">View</button>
+      <button onclick="addToCart('Terracotta Table Lamp', 1299)">Add to Cart</button>
+    </div>
+
+    <div class="product">
+      <img src="https://via.placeholder.com/300?text=Wooden+Notebook" alt="Wooden Notebook">
+      <h2>Wood-Bound Notebook</h2>
+      <p>This eco-conscious wooden notebook features handmade paper and a sturdy wood cover, ideal for artists, writers, or note-takers.</p>
+      <p><strong>Price:</strong> ₹349</p>
+      <button onclick="viewProduct('Wood-Bound Notebook')">View</button>
+      <button onclick="addToCart('Wood-Bound Notebook', 349)">Add to Cart</button>
+    </div>
+
+    <div class="product">
+      <img src="https://via.placeholder.com/300?text=Bamboo+Speaker" alt="Bamboo Speaker">
+      <h2>Handmade Bamboo Speaker</h2>
+      <p>Eco-friendly, passive bamboo speaker for smartphones. No electricity needed—just natural acoustics in a sustainable design.</p>
+      <p><strong>Price:</strong> ₹749</p>
+      <button onclick="viewProduct('Handmade Bamboo Speaker')">View</button>
+      <button onclick="addToCart('Handmade Bamboo Speaker', 749)">Add to Cart</button>
+    </div>
+
+    <div class="product">
+      <img src="https://via.placeholder.com/300?text=Silk+Scarf" alt="Silk Scarf">
+      <h2>Handwoven Silk Scarf</h2>
+      <p>Elegant and soft, this scarf is handwoven with pure silk and dyed with organic colors. A timeless accessory for any wardrobe.</p>
+      <p><strong>Price:</strong> ₹599</p>
+      <button onclick="viewProduct('Handwoven Silk Scarf')">View</button>
+      <button onclick="addToCart('Handwoven Silk Scarf', 599)">Add to Cart</button>
+    </div>
+
+    <div class="product">
+      <img src="https://via.placeholder.com/300?text=Leather+Wallet" alt="Leather Wallet">
+      <h2>Minimalist Leather Wallet</h2>
+      <p>Crafted from genuine leather, this wallet offers sleek design with essential storage. Ideal for the modern minimalist.</p>
+      <p><strong>Price:</strong> ₹699</p>
+      <button onclick="viewProduct('Minimalist Leather Wallet')">View</button>
+      <button onclick="addToCart('Minimalist Leather Wallet', 699)">Add to Cart</button>
+    </div>
+
+    <div class="product">
+      <img src="https://via.placeholder.com/300?text=Coconut+Candle" alt="Coconut Candle">
+      <h2>Coconut Shell Scented Candle</h2>
+      <p>Enjoy soothing scents in an eco-friendly coconut shell container. Hand-poured wax with calming aromas for your peace.</p>
+      <p><strong>Price:</strong> ₹399</p>
+      <button onclick="viewProduct('Coconut Shell Scented Candle')">View</button>
+      <button onclick="addToCart('Coconut Shell Scented Candle', 399)">Add to Cart</button>
+    </div>
+
+    <div class="product">
+      <img src="https://via.placeholder.com/300?text=Stone+Necklace" alt="Stone Necklace">
+      <h2>Natural Stone Necklace</h2>
+      <p>This necklace features semi-precious stones arranged in a modern, boho design. Handmade and perfect for everyday elegance.</p>
+      <p><strong>Price:</strong> ₹899</p>
+      <button onclick="viewProduct('Natural Stone Necklace')">View</button>
+      <button onclick="addToCart('Natural Stone Necklace', 899)">Add to Cart</button>
+    </div>
+  </main>
+
+  <script>
+    function viewProduct(name) {
+      alert(`Viewing: ${name}`);
+    }
+
+    function addToCart(name, price) {
+      let cart = JSON.parse(localStorage.getItem('cart')) || [];
+      cart.push({ name, price });
+      localStorage.setItem('cart', JSON.stringify(cart));
+      alert(`${name} added to cart!`);
+    }
+  </script>
+</body>
+</html>
